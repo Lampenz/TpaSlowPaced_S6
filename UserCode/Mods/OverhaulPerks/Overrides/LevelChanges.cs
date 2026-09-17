@@ -89,7 +89,6 @@ namespace Eco.Mods.TechTree
         partial void ModsPostInitialize()
 		{
 			this.RequiredSkills = RequiresSkillAttribute.Cache.Get(typeof(SteelMooragePostRecipe));
-			this.Recipes[0].Ingredients.Add(new IngredientElement(typeof(ShipWaxItem), 3, true));
 		}
     }
 	
