@@ -1,0 +1,61 @@
+﻿// Copyright (c) Strange Loop Games. All rights reserved.
+// See LICENSE file in the project root for full license information.
+
+namespace Eco.Mods.TechTree
+{
+    using System;
+	using System.ComponentModel;
+	using System.Linq;
+	using System.Collections.Generic;
+	using Eco.Gameplay.Components;
+	using Eco.Gameplay.Items;
+    using Eco.Gameplay.Bonuses;
+    using Eco.Gameplay.Players;
+    using Eco.Gameplay.Skills;
+    using Eco.Gameplay.Systems.TextLinks;
+    using Eco.Shared.Localization;
+    using Eco.Shared.Math;
+    using Eco.Shared.Utils;
+	using Eco.Shared.Items;
+	using Eco.Shared.View;
+	using Eco.Shared.Serialization;
+    using Eco.Simulation.WorldLayers;
+	using Eco.Mods.TechTree;
+    
+	[Serialized]
+    public partial class BakingBreadsYieldTalent : Talent
+    {
+        public BakingBreadsYieldTalent()
+        {
+            this.Bonuses.Add(new Bonus
+            {
+                Name = Localizer.DoStr("Baker's Dozen"),
+                Causes = new List<BonusCause> { new CraftBonusCause { Action = BonusAction.Yield, Recipes = new HashSet<Type> { typeof(BreadRecipe), typeof(CamasBreadRecipe) } } },
+                Effects = new List<BonusEffect> { new BonusEffectAdditive { Value = 0.4f } },
+            });
+			this.Bonuses.Add(new Bonus
+            {
+                Name = Localizer.DoStr("Baker's Dozen"),
+                Causes = new List<BonusCause> { new CraftBonusCause { Action = BonusAction.ResourceCost, Recipes = new HashSet<Type> { typeof(BreadRecipe), typeof(CamasBreadRecipe) } } },
+                Effects = new List<BonusEffect> { new BonusEffectMultiplicative { Value = 0.7f, LowerIsBetter = true } },
+            });
+        }
+    }
+
+    [Serialized]
+    [LocDisplayName("Baker's Dozen")]
+    [LocDescription("Improve efficiency making Breads.")]
+    public partial class BakingBreadsYieldTalentGroup : TalentGroup
+    {
+        public BakingBreadsYieldTalentGroup()
+        {
+            Talents = new Type[]
+            {
+                typeof(BakingBreadsYieldTalent),
+            };
+            this.OwningSkill = typeof(BakingSkill);
+            this.Level = 6;
+        }
+    }
+    
+}

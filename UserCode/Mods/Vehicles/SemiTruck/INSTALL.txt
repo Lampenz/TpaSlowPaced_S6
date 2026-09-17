@@ -1,0 +1,24 @@
+﻿Semi Truck v1.0.0
+A vehicle mod for Eco. Built and tested against Eco Server 0.14.0.2 (release-1054).
+
+INSTALL
+  1. Stop the server.
+  2. Extract this zip into the Eco server's root directory - the folder that already
+     contains Mods/. It will place its files in Mods/UserCode/SemiTruck/.
+  3. Start the server. It compiles the mod on boot.
+
+  Players do NOT need to install anything: Eco sends mod assets to connecting clients.
+
+UNINSTALL
+  Delete Mods/UserCode/SemiTruck/ and restart the server. Any Semi Trucks already
+  placed in the world will disappear along with it.
+
+WHAT IT ADDS
+  Semi Truck - a combustion truck that sits between the Steam Truck and the modern
+  Truck. Craftable at the Assembly Line with Mechanics 5. Every ingredient is
+  pre-Industry by design, so it can be built and maintained before Industry is
+  researched. 30 storage slots, 6500kg, burnable fuel, two headlights and a bed that
+  shows its cargo.
+
+LICENCES
+  See LICENSES.md, included. Read it before redistributing.
