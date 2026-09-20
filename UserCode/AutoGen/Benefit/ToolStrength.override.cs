@@ -33,6 +33,7 @@ namespace Eco.Mods.TechTree
         public override bool Base => true;
     }
 
+
     /// <summary>
     /// <para>Server side talent group definition for "ToolStrength".</para>
     /// <para>More information about TalentGroup objects can be found at https://docs.play.eco/api/server/eco.gameplay/Eco.Gameplay.Skills.TalentGroup.html</para>

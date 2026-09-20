@@ -5,51 +5,54 @@
         public static readonly System.Collections.Generic.Dictionary<string, int> BySkillName =
             new System.Collections.Generic.Dictionary<string, int>(System.StringComparer.OrdinalIgnoreCase)
             {
-                ["MasonrySkill"] = 2,
-				
-				["FarmingSkill"] = 3,
 
-                ["ShipwrightSkill"] = 4,
+
+            /* (when gated by law, this were our defaults.)
+            Day 4: Shipwright, Tailoring [x]
+            Day 7:  Basic engineering, Milling, Fertilizers [x]
+            Day 11: Smelting, Painting [x]
+            Day 14: Cooking, Baking, Blacksmithing, Pottery, Glassworking, Papermilling
+            Day 21:  Mechanics, Advanced smelting, Recycling,
+            Day 28: Advanced cooking, Advanced baking, Industry, Oil Drilling
+            Day 32: Advanced masonry, Electronics, Composites, Cutting edge cooking
+            */
+
+                ["MasonrySkill"]    = 3,
+                ["CarpentrySkill"]  = 3,
                 
-                ["ButcherySkill"] = 4,
-				
-				["MillingSkill"] = 5,
-                ["BakingSkill"] = 5,
-				["CookingSkill"] = 5,
-                ["TailoringSkill"] = 5,
-				
-                ["CarpentrySkill"] = 5,
-                ["BasicEngineeringSkill"] = 5,
+                ["FarmingSkill"]    = 4,
+                ["ButcherySkill"]   = 4,
 
-                ["SmeltingSkill"] = 6,
-                
-                ["BlacksmithSkill"] = 6,
-                
-                ["PaintingSkill"] = 7,
-				
-				["PotterySkill"] = 8,
-                ["GlassworkingSkill"] = 9,
+                ["ShipwrightSkill"] = 5,
+                ["TailoringSkill"]  = 5,
 
-                ["MechanicsSkill"] = 10,
-                ["PaperMillingSkill"] = 10,
+                ["BasicEngineeringSkill"]   = 7,
+				["MillingSkill"]            = 7,
+                ["FertilizersSkill"]        = 7,
 
-                ["FertilizersSkill"] = 11,
-				
-                ["AdvancedBakingSkill"] = 12,
-                ["AdvancedCookingSkill"] = 12,
-				
-				["AdvancedSmeltingSkill"] = 13,
-                ["CompositesSkill"] = 13,
+                ["SmeltingSkill"] = 9,
+                ["PaintingSkill"] = 9,
 
-                ["AdvancedMasonrySkill"] = 14,
+                ["BakingSkill"] = 11,
+				["CookingSkill"] = 11,
+                ["BlacksmithSkill"] = 11,               
+				["PotterySkill"] = 11,
+                ["GlassworkingSkill"] = 11,
+                ["PaperMillingSkill"] = 11,
 
-                ["OilDrillingSkill"] = 15,
+                ["MechanicsSkill"] = 14,
+				["AdvancedSmeltingSkill"] = 14,
+                ["RecyclingSkill"] = 14,
 
-                ["ElectronicsSkill"] = 16,
-
+                ["AdvancedBakingSkill"] = 16,
+                ["AdvancedCookingSkill"] = 16,
                 ["IndustrySkill"] = 17,
+                ["OilDrillingSkill"] = 17,
 
-                ["CuttingEdgeCookingSkill"] = 25,
+                ["AdvancedMasonrySkill"] = 18,
+                ["ElectronicsSkill"] = 18,
+                ["CompositesSkill"] = 18,
+                ["CuttingEdgeCookingSkill"] = 20,
             };
     }
 }

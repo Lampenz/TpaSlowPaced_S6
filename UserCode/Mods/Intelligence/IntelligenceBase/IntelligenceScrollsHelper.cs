@@ -9,7 +9,7 @@ namespace Eco.Mods.TechTree
 
     public static class IntelligenceScrollsHelper
     {
-        public const int ScrollOutputAmount = 2;
+        public const int ScrollOutputAmount = 4;
         public const float IngredientCostMultiplier = 1.0f;
 
         public static void ConfigurePreInitialize<TScroll>(

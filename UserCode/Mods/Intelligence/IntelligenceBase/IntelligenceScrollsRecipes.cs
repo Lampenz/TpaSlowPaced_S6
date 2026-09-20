@@ -314,6 +314,19 @@ namespace Eco.Mods.TechTree
         }
     }
 
+    public partial class RecyclingSkillBookRecipe
+    {
+        partial void ModsPreInitialize()
+        {
+            IntelligenceScrollsHelper.ConfigurePreInitialize<RecyclingSkillScroll>(this, new IngredientElement(typeof(GarbageSorterItem), 1, true));
+        }
+
+        partial void ModsPostInitialize()
+        {
+            IntelligenceScrollsHelper.ConfigurePostInitialize(this, typeof(PotterySkill));
+        }
+    }
+
     public partial class ShipwrightSkillBookRecipe
     {
         partial void ModsPreInitialize()
