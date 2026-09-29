@@ -9,15 +9,15 @@ namespace Eco.Mods.Organisms
     using Eco.Simulation.Types;
     using Eco.World.Blocks;
     using Range = Eco.Shared.Math.Range;
-
-    public partial class Palm : TreeEntity
+    
+    public partial class Fir : TreeEntity
     {
-        public partial class PalmSpecies : TreeSpecies
+        public partial class FirSpecies : TreeSpecies
         {
             partial void SetDefaultProperties()
             {
                 // Lifetime
-                this.TreeHealth = 6f;
+                this.TreeHealth = 15f;
                 this.LogHealth = 2f;
                 // Resources
                 this.ChanceToSpawnDebris = 0.3f;
@@ -25,31 +25,30 @@ namespace Eco.Mods.Organisms
                 this.BranchingDef = new List<TreeBranchDef>()
                 {
                     new TreeBranchDef() { Name = "Branch0", Health = 3f, LeafPoints = 1, GrowthStartTime = new Range(0f, 0f), GrowthEndTime = new Range(1f, 1f) },
+                    new TreeBranchDef() { Name = "Branch1", Health = 3f, LeafPoints = 1, GrowthStartTime = new Range(0f, 0f), GrowthEndTime = new Range(1f, 1f) },
+                    new TreeBranchDef() { Name = "Branch2", Health = 3f, LeafPoints = 1, GrowthStartTime = new Range(0f, 0f), GrowthEndTime = new Range(1f, 1f) },
                 };
-                this.TopBranchLeafPoints = 1;
+                this.TopBranchLeafPoints = 0;
                 this.TopBranchHealth = 3;
-                this.BranchRotations = null;
+                this.SequentialBranchRotations = true;
+                this.BranchRotations = new float[] { 0.0f, 120.0f, 240.0f };
                 this.RandomYRotation = true;
-                this.BranchCount = new Range(1f, 1f);
-                this.BlockType = new BlockType(typeof(TreeBlock));
-                this.DebrisType = typeof(PalmTreeDebrisBlock);
+                this.BranchCount = new Range(3f, 3f);
+                this.BlockType = typeof(TreeBlock);
+                this.DebrisType = typeof(FirTreeDebrisBlock);
                 this.DebrisResources = new Dictionary<Type, Range>()
                 {
                     { typeof(WoodPulpItem), new Range(4, 5) },
-                    { typeof(HeartOfPalmItem), new Range(0, 1) },
-                    { typeof(PalmSeedItem), new Range(0, 1) },
-                    { typeof(CoconutItem), new Range(0, 1) },
+                    { typeof(FirSeedItem), new Range(0, 1) },
                 };
-
                 this.TrunkResources = new Dictionary<Type, Range>()
                 {
                     { typeof(WoodPulpItem), new Range(4, 5) },
-                    { typeof(PalmLogItem), new Range(5, 10) }
+                    { typeof(FirLogItem), new Range(5, 10) }
                 };
-
-                this.XZScaleRange = new Range(.8f, 1.4f);
+                this.XZScaleRange = new Range(.8f, 1.2f);
                 this.YScaleRange = new Range(.8f, 1.4f);
-                this.Density = 950f; // High density is required for proper mass and fall force calculations, due to big height
+                this.Density = 450f;
             }
         }
     }

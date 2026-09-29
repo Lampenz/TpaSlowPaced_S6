@@ -12,4 +12,20 @@ namespace TPA_Mods
         }
     }
 
+    public sealed class TailoringResearchbakingSkillBook : SimpleRecipePatch<BakingSkillBookRecipe>
+    {
+        protected override void Modify()
+        {
+            AddIngredient<TailoringResearchPaperBasicItem>(5);
+        }
+    }
+
+    public sealed class TailoringResearchCookingSkillBook : SimpleRecipePatch<CookingSkillBookRecipe>
+    {
+        protected override void Modify()
+        {
+            AddIngredient<TailoringResearchPaperBasicItem>(5);
+        }
+    }
+
 }
