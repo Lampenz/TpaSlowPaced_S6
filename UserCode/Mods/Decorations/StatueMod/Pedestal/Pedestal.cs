@@ -40,7 +40,7 @@ namespace EcoPulse.StatueMod
 
                 ingredients: new List<IngredientElement>
                 {
-                new IngredientElement(typeof(MortaredLimestoneItem), 20),
+                new IngredientElement(typeof(MortaredLimestoneItem), 30, true),
                 },
 
                 items: new List<CraftingElement>

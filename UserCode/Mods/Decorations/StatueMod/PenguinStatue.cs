@@ -15,9 +15,9 @@ namespace EcoPulse.StatueMod
         {
             return new List<BlockOccupancy>()
             {
-                new BlockOccupancy(new Vector3i(0, 0, 0), typeof(BuildingWorldObjectBlock)),
+                new BlockOccupancy(new Vector3i(0, 0, 0)),
 
-                new BlockOccupancy(new Vector3i(0, 1, 0), typeof(BuildingWorldObjectBlock)),
+                new BlockOccupancy(new Vector3i(0, 1, 0)),
             };
         }
     }

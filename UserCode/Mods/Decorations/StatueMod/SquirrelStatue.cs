@@ -1,4 +1,4 @@
-﻿using Eco.Gameplay.Objects;
+using Eco.Gameplay.Objects;
 using Eco.Gameplay.Occupancy;
 using Eco.Shared.Math;
 using System;
@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace EcoPulse.StatueMod
 {
-    public class BearStatue
+    public class SquirrelStatue
     {
         public static List<BlockOccupancy> GetOccupency()
         {
@@ -22,3 +22,4 @@ namespace EcoPulse.StatueMod
         }
     }
 }
+

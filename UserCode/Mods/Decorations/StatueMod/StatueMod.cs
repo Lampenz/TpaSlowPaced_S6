@@ -1,4 +1,4 @@
-﻿using Eco.Core.Plugins.Interfaces;
+using Eco.Core.Plugins.Interfaces;
 using Eco.Shared.Localization;
 using Eco.Shared.Logging;
 using System;
@@ -11,7 +11,7 @@ namespace EcoPulse.StatueMod
 {
     internal class StatueMod : IModInit
     {
-        public static readonly string Version = "1.0.2";
+        public static readonly string Version = "1.5.0";
         public StatueMod()
         {
             Log.WriteLine(Localizer.Do($"StatueMod {Version}"));

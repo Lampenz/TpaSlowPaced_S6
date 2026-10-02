@@ -1,4 +1,4 @@
-﻿
+
 namespace EcoPulse.StatueMod
 {
 
@@ -109,13 +109,13 @@ namespace EcoPulse.StatueMod
     /// If you wish to modify this class, please create a new partial class or follow the instructions in the "UserCode" folder to override the entire file.
     /// </remarks>
     [RequiresSkill(typeof(AdvancedSmeltingSkill), 5)]
+    [ForceCreateView]
     [Ecopedia("Housing Objects", "Outdoor", subPageName: "Golden Pig Statue Item")]
-    public partial class GoldenPigStatueRecipe : RecipeFamily
+    public partial class GoldenPigStatueRecipe : Recipe
     {
         public GoldenPigStatueRecipe()
         {
-            var recipe = new Recipe();
-            recipe.Init(
+            this.Init(
                 name: "GoldenPigStatue",  //noloc
                 displayName: Localizer.DoStr("Golden Pig Statue"),
 
@@ -134,22 +134,9 @@ namespace EcoPulse.StatueMod
                 {
                     new CraftingElement<GoldenPigStatueItem>()
                 });
-            this.Recipes = new List<Recipe> { recipe };
-            this.ExperienceOnCraft = 2; // Defines how much experience is gained when crafted.
 
-            // Defines the amount of labor required and the required skill to add labor
-            this.LaborInCalories = CreateLaborInCaloriesValue(60, typeof(AdvancedSmeltingSkill));
-
-            // Defines our crafting time for the recipe
-            this.CraftMinutes = CreateCraftTimeValue(beneficiary: typeof(GoldenPigStatueRecipe), start: 10, skillType: typeof(AdvancedSmeltingSkill));
-
-            // Perform pre/post initialization for user mods and initialize our recipe instance with the display name "Golden Pig Statue"
-            this.ModsPreInitialize();
-            this.Initialize(displayText: Localizer.DoStr("Golden Pig Statue"), recipeType: typeof(GoldenPigStatueRecipe));
             this.ModsPostInitialize();
-
-            // Register our RecipeFamily instance with the crafting system so it can be crafted.
-            CraftingComponent.AddRecipe(tableType: typeof(AnvilObject), recipeFamily: this);
+            CraftingComponent.AddTagProduct(typeof(AnvilObject), typeof(GoldenLionStatueRecipe), this);
         }
 
         /// <summary>Hook for mods to customize RecipeFamily before initialization. You can change recipes, xp, labor, time here.</summary>

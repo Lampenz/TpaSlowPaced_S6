@@ -1,4 +1,4 @@
-﻿
+
 namespace EcoPulse.StatueMod
 {
 
@@ -109,13 +109,13 @@ namespace EcoPulse.StatueMod
     /// If you wish to modify this class, please create a new partial class or follow the instructions in the "UserCode" folder to override the entire file.
     /// </remarks>
     [RequiresSkill(typeof(SmeltingSkill), 5)]
+    [ForceCreateView]
     [Ecopedia("Housing Objects", "Outdoor", subPageName: "Copper Pig Statue Item")]
-    public partial class CopperPigStatueRecipe : RecipeFamily
+    public partial class CopperPigStatueRecipe : Recipe
     {
         public CopperPigStatueRecipe()
         {
-            var recipe = new Recipe();
-            recipe.Init(
+            this.Init(
                 name: "CopperPigStatue",  //noloc
                 displayName: Localizer.DoStr("Copper Pig Statue"),
 
@@ -134,22 +134,9 @@ namespace EcoPulse.StatueMod
                 {
                     new CraftingElement<CopperPigStatueItem>()
                 });
-            this.Recipes = new List<Recipe> { recipe };
-            this.ExperienceOnCraft = 2; // Defines how much experience is gained when crafted.
 
-            // Defines the amount of labor required and the required skill to add labor
-            this.LaborInCalories = CreateLaborInCaloriesValue(60, typeof(SmeltingSkill));
-
-            // Defines our crafting time for the recipe
-            this.CraftMinutes = CreateCraftTimeValue(beneficiary: typeof(CopperPigStatueRecipe), start: 10, skillType: typeof(SmeltingSkill));
-
-            // Perform pre/post initialization for user mods and initialize our recipe instance with the display name "Copper Pig Statue"
-            this.ModsPreInitialize();
-            this.Initialize(displayText: Localizer.DoStr("Copper Pig Statue"), recipeType: typeof(CopperPigStatueRecipe));
             this.ModsPostInitialize();
-
-            // Register our RecipeFamily instance with the crafting system so it can be crafted.
-            CraftingComponent.AddRecipe(tableType: typeof(AnvilObject), recipeFamily: this);
+            CraftingComponent.AddTagProduct(typeof(AnvilObject), typeof(CopperLionStatueRecipe), this);
         }
 
         /// <summary>Hook for mods to customize RecipeFamily before initialization. You can change recipes, xp, labor, time here.</summary>
